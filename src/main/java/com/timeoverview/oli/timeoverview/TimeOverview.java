@@ -81,20 +81,21 @@ public class TimeOverview extends AppCompatActivity {
         resultSet2.moveToFirst();
         resultSet.moveToFirst();
         int max=resultSet2.getInt(0);
-        String[] stringArray= new String[max-1];
-        int count=0;
-        while(resultSet.moveToNext()){
-            String username = resultSet.getString(0);
-            Integer password = resultSet.getInt(1);
-            stringArray[count]=username+" "+password;
-            count +=1;
+        if (max!=0) {
+            String[] stringArray = new String[max - 1];
+            int count = 0;
+            while (resultSet.moveToNext()) {
+                String username = resultSet.getString(0);
+                Integer password = resultSet.getInt(1);
+                stringArray[count] = username + " " + password;
+                count += 1;
+            }
+
+
+            ArrayAdapter adapter = new ArrayAdapter<String>(TimeOverview.this, android.R.layout.simple_list_item_1, stringArray);
+            ListView listView = (ListView) findViewById(R.id.listView);
+            listView.setAdapter(adapter);
         }
-
-
-
-        ArrayAdapter adapter = new ArrayAdapter<String>(TimeOverview.this, android.R.layout.simple_list_item_1, stringArray);
-        ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
     }
 
 
