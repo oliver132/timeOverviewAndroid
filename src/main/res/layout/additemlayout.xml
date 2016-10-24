@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:id="@+id/addItemCat">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategorie:  "
+            android:id="@+id/categoryLabel"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textSize="30dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/catSpinner"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/categoryLabel"
+            android:layout_alignBottom="@+id/categoryLabel" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Akzeptieren"
+            android:id="@+id/addItemAcceptButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:height="100dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zeit:"
+            android:id="@+id/timeLabel"
+            android:layout_below="@+id/categoryLabel"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="39dp"
+            android:textSize="30dp"
+            android:layout_toStartOf="@+id/catSpinner" />
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker"
+            android:layout_alignTop="@+id/timeLabel"
+            android:layout_toEndOf="@+id/timeLabel" />
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker2"
+            android:layout_alignTop="@+id/numberPicker"
+            android:layout_toEndOf="@+id/numberPicker" />
+
+    </RelativeLayout>
 </LinearLayout>
